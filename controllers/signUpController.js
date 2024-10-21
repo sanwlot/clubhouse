@@ -2,16 +2,7 @@ const pool = require("../db/pool")
 const bcrypt = require("bcryptjs")
 module.exports = {
   getSignUp: (req, res) => {
-    res.send(`
-            <form method="POST"> 
-                <h1>Sign up</h1>
-                <input type="text" placeholder="first name" name="first_name" required /> <br>
-                <input type="text" placeholder="last name" name="last_name" required /> <br>
-                <input type="email" placeholder="email" name="email" required /> <br>
-                <input type="password" placeholder="password" name="password" required /> <br>
-                <button>Sign up</button>
-            </form>
-        `)
+    res.render("sign-up", { user: req.user })
   },
   postSignUp: async (req, res, next) => {
     const { first_name, last_name, email, password } = req.body

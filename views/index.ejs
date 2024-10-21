@@ -11,25 +11,28 @@
 <body>
   <%- include('partials/_header') %>
 
-  <ul>
-    <% messages.forEach(message => { %>
-    <li style="margin-bottom: 20px">
-      <div><strong><%= message.title %></strong></div>
-      <div><%= message.message %></div>
-      <div style="font-size: 10px">
-        <% if (user) { %>
-        <div>Author ID: <em><%= message.userId %></em></div>
-        <div style="font-size: 7px">
-          Posted on: <%= new Date(message.createdAt).toLocaleDateString() %>
+  <main>
+    <h1>Messages</h1>
+    <ul>
+      <% messages.forEach(message => { %>
+      <li style="margin-bottom: 20px">
+        <div><strong><%= message.title %></strong></div>
+        <div><%= message.message %></div>
+        <div style="font-size: 10px">
+          <% if (user) { %>
+          <div>Author ID: <em><%= message.userId %></em></div>
+          <div style="font-size: 7px">
+            Posted on: <%= new Date(message.createdAt).toLocaleDateString() %>
+          </div>
+          <% } else { %>
+          <div><em>Author: Unknown</em></div>
+          <div style="font-size: 7px">Posted on: Unknown</div>
+          <% } %>
         </div>
-        <% } else { %>
-        <div><em>Author: Unknown</em></div>
-        <div style="font-size: 7px">Posted on: Unknown</div>
-        <% } %>
-      </div>
-    </li>
-    <% }) %>
-  </ul>
+      </li>
+      <% }) %>
+    </ul>
+  </main>
 </body>
 
 </html>

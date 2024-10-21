@@ -27,4 +27,4 @@ app.use("/join-membership", joinMembershipRouter)
 app.use("/create-new-message", createNewMessageRouter)
 app.use("/log-out", logoutRouter)
 
-app.listen(8090)
+app.listen(8010)

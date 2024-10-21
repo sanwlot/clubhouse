@@ -2,16 +2,7 @@ const pool = require("../db/pool")
 
 module.exports = {
   getCreateNewMessage: (req, res) => {
-    res.send(`
-        <form method="POST"> 
-          <h1>Create new message</h1>
-          <input name="title" type="text" placeholder="title" /> 
-          <br/>
-          <textarea name="message" placeholder="enter message" required></textarea>
-          <br />
-          <button>Create</button>
-        </form>
-      `)
+    res.render("create-new-message", { user: req.user })
   },
   postCreateNewMessage: async (req, res) => {
     const { message, title } = req.body

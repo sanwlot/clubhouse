@@ -2,13 +2,7 @@ const pool = require("../db/pool")
 
 module.exports = {
   getMembership: (req, res) => {
-    res.send(`
-        <form method="POST">
-          <h1>Enter the secret to get the membership</h1>
-          <input type="text" name="secret" placeholder="secret" />
-          <button>enter</button>
-        </form>
-      `)
+    res.render("membership", { user: req.user })
   },
   postMembership: async (req, res, next) => {
     const { secret } = req.body
