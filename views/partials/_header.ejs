@@ -1,0 +1,19 @@
+<header>
+  <h1>CLUBHOUSE</h1>
+  <% if (!user) { %>
+  <h2>Welcome Guest</h2>
+  <a href="/log-in">Log in</a>
+  <a href="/sign-up">Sign up</a>
+  <% } else { %>
+  <h2>Welcome <%= user.first_name %></h2>
+  <% if (!user.membership) { %>
+  <a href="/join-membership">Join Membership</a>
+  <% } else { %>
+  <span>Pro member</span>
+  <% } %>
+  <br />
+  <a href="/log-out">Log out</a>
+  <br />
+  <a href="/create-new-message">Create a new message</a>
+  <% } %>
+</header>
