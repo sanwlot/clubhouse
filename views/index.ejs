@@ -24,6 +24,11 @@
           <div style="font-size: 7px">
             Posted on: <%= new Date(message.createdAt).toLocaleDateString() %>
           </div>
+          <% if (user.admin) { %>
+          <form action="/delete-message/<%= message.id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+          <% } %>
           <% } else { %>
           <div><em>Author: Unknown</em></div>
           <div style="font-size: 7px">Posted on: Unknown</div>

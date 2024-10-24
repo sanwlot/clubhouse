@@ -12,6 +12,7 @@ module.exports = {
         .map((message) => {
           const createdAt = new Date(message.created_at)
           return {
+            id: message.id,
             title: message.title,
             message: message.message,
             userId: message.user_id,

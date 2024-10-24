@@ -7,7 +7,7 @@ module.exports = {
   postSignUp: async (req, res, next) => {
     const { first_name, last_name, email, password } = req.body
     try {
-      bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
+      bcrypt.hash(password, 10, async (err, hashedPassword) => {
         if (err) return next(err)
         await pool.query(
           "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4)",

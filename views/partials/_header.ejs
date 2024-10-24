@@ -5,15 +5,24 @@
   <a href="/log-in">Log in</a>
   <a href="/sign-up">Sign up</a>
   <% } else { %>
+  <% if (!user.admin) { %>
   <h2>Welcome <%= user.first_name %></h2>
+  <% } else { %>
+  <h2>Welcome <%= user.first_name %> (Admin)</h2>
+  <% } %>
+
   <% if (!user.membership) { %>
-  <a href="/join-membership">Join Membership</a>
+  <a href="/join-membership">Join Membership</a><br>
   <% } else { %>
   <span>Pro member</span>
   <% } %>
+
+  <% if (!user.admin) { %>
+  <a href="/admin">Admin</a>
+  <% } %>
+
   <br />
-  <a href="/log-out">Log out</a>
-  <br />
+  <a href="/log-out">Log out</a><br>
   <a href="/create-new-message">Create a new message</a>
   <% } %>
 </header>
