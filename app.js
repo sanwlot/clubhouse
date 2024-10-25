@@ -29,6 +29,6 @@ app.use("/join-membership", joinMembershipRouter)
 app.use("/create-new-message", createNewMessageRouter)
 app.use("/log-out", logoutRouter)
 app.use("/admin", adminRouter)
-app.use("/delete-message/:id", deleteMessageRouter)
+app.use("/delete-message", deleteMessageRouter)
 
 app.listen(8010)
