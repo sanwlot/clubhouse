@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS users (
   last_name VARCHAR ( 255 ),
   membership VARCHAR ( 255 ),
   email VARCHAR ( 255 ),
-  password VARCHAR ( 255 )
+  password VARCHAR ( 255 ),
+  admin BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS messages (
@@ -16,7 +17,7 @@ CREATE TABLE IF NOT EXISTS messages (
   user_id INTEGER,
   title VARCHAR ( 255 ),
   message VARCHAR ( 255 ),
-  createdAt TIMESTAMP
+  created_at TIMESTAMP
 );
 
 INSERT INTO users (first_name, last_name, email, password) 
