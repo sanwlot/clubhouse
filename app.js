@@ -31,4 +31,6 @@ app.use("/log-out", logoutRouter)
 app.use("/admin", adminRouter)
 app.use("/delete-message", deleteMessageRouter)
 
-app.listen(8011)
+app.listen(8011, () => {
+  console.log("http://localhost:8011")
+})
